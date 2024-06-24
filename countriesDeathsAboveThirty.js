@@ -21,12 +21,11 @@
 //  * }]
 //  */
 
-// const {parseCsvToJson, calculatePercentage}  = require("./utils");
-const calculate_global_covid_stats = require("./secondTask");
+
+const calculatedCountryWiseStats = require("./countryWiseStats");
 const { parseCsvToJson} = require("./utils");
 
 function allCountriesStatsAbove(allcountriesData){
-  //console.log(allcountriesData);
-      return allcountriesData.filter(country=>parseInt(country.deathsPercentage)>3);
+      return allcountriesData.filter(country=>parseInt(country.deathsPercentage)>25);
 }
-console.log(allCountriesStatsAbove(calculate_global_covid_stats(parseCsvToJson("./data/country_wise_latest.csv"))));
+console.log(allCountriesStatsAbove(calculatedCountryWiseStats(parseCsvToJson("./data/country_wise_latest.csv"))));

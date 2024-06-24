@@ -18,7 +18,7 @@ const { parseCsvToJson } = require("./utils");
 const fs = require("fs");
 
 const deathsAfterTWentyNineFeb = function (allCountryData) {
-  let allDeathsAfter = allCountryData.reduce((accumulator, currentValue) => {
+  return allCountryData.reduce((accumulator, currentValue) => {
     if (!currentValue["Date"] || !currentValue["Deaths"]) {
       return accumulator;
     }
@@ -33,10 +33,8 @@ const deathsAfterTWentyNineFeb = function (allCountryData) {
     //   if((month > "05" || (month === "05" && day > "01") )){
     //     return accumulator + parseInt(currentValue["Deaths"],10);
     //   }
-  
+    
       return accumulator;
   }, 0);
-
-  return allDeathsAfter;
 };
 console.log(deathsAfterTWentyNineFeb(parseCsvToJson("./data/day_wise.csv")));

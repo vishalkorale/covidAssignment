@@ -57,21 +57,20 @@
 // };
 // console.log(asianCountries()); 
 
-const allcountriesstats = require("./secondTask");
+const allcountryWisestats = require("./countryWiseStats");
 const {parseCsvToJson} = require("./utils");
+const asianCountries = [
+  "Afghanistan","Armenia","Azerbaijan","Bahrain","Bangladesh","Bhutan","Brunei","Cambodia","China","Cyprus","Georgia",
+  "India","Indonesia","Iran","Iraq","Israel","Japan","Jordan","Kazakhstan","Kuwait","Kyrgyzstan","Laos","Lebanon","Malaysia",
+  "Maldives","Mongolia","Myanmar","Nepal","North Korea","Oman","Pakistan","Palestine","Philippines","Qatar","Russia","Saudi Arabia",
+  "Singapore","South Korea","Sri Lanka","Syria","Taiwan","Tajikistan","Thailand","Timor-Leste","Turkey","Turkmenistan",
+  "United Arab Emirates","Uzbekistan","Vietnam","Yemen"
+];
 
 const getsianCountries = (allcountriesdata) => {
 
 
-  const asianCountries = [
-    "Afghanistan","Armenia","Azerbaijan","Bahrain","Bangladesh","Bhutan","Brunei","Cambodia","China","Cyprus","Georgia",
-    "India","Indonesia","Iran","Iraq","Israel","Japan","Jordan","Kazakhstan","Kuwait","Kyrgyzstan","Laos","Lebanon","Malaysia",
-    "Maldives","Mongolia","Myanmar","Nepal","North Korea","Oman","Pakistan","Palestine","Philippines","Qatar","Russia","Saudi Arabia",
-    "Singapore","South Korea","Sri Lanka","Syria","Taiwan","Tajikistan","Thailand","Timor-Leste","Turkey","Turkmenistan",
-    "United Arab Emirates","Uzbekistan","Vietnam","Yemen"
-];
-
   return  allcountriesdata.filter((currentCountryData) => asianCountries.includes(currentCountryData["countryName"]));
 }
 
-console.log(getsianCountries(allcountriesstats(parseCsvToJson("./data/country_wise_latest.csv"))));
+console.log(getsianCountries(allcountryWisestats(parseCsvToJson("./data/country_wise_latest.csv"))));
